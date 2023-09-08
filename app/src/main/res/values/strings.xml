@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TimeWise</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="not_registered_yet">Not Registered Yet ?</string>
+    <string name="username">Username</string>
+    <string name="please_enter_your_information_and_create_your_account">Please enter your information and Create your account</string>
+    <string name="email">Email</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account">Already have an Account ?</string>
+</resources>
