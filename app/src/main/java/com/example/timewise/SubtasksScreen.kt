@@ -13,11 +13,7 @@ class SubtasksScreen : AppCompatActivity()
         setContentView(binding.root)
 
         val btnAddSubTask = null
-        btnAddSubTask.setOnClickListener()
-        {
 
-
-        }
     }
 
 
