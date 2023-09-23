@@ -26,32 +26,128 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@color/headerGreen" />
 
-    <EditText
-        android:id="@+id/editTextTextUsername"
-        android:layout_width="355dp"
-        android:layout_height="56dp"
-        android:background="@drawable/rounded_textview"
-        android:breakStrategy="simple"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="@string/username"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <Button
+        android:id="@+id/btnBackCreateSubTasks"
+        android:layout_width="49dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="64dp"
+        android:foreground="@drawable/back_button_green"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="149dp" />
+    <ScrollView
+        android:layout_width="412dp"
+        android:layout_height="612dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txtTaskNameHeading"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="298dp"
+                android:fontFamily="@font/poppins"
+                android:text="Task Name:"
+                android:textColor="@color/darkGreen"
+                android:textColorHint="@color/darkGreen"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextTaskName"
+                android:layout_width="373dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/rounded_textview"
+                android:breakStrategy="simple"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Task Name"
+                android:textAlignment="center"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/txtDateHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="298dp"
+                android:fontFamily="@font/poppins"
+                android:text="Date:"
+                android:textColor="@color/darkGreen"
+                android:textColorHint="@color/darkGreen"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="373dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/rounded_textview"
+                android:breakStrategy="simple"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Date"
+                android:inputType="date"
+                android:textAlignment="center"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/txtStartTimeHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="244dp"
+                android:fontFamily="@font/poppins"
+                android:text="Start Time:"
+                android:textColor="@color/darkGreen"
+                android:textColorHint="@color/darkGreen"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextEndTime"
+                android:layout_width="104dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="72dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:inputType="time" />
+
+            <TextView
+                android:id="@+id/txtEndTimeHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="104dp"
+                android:fontFamily="@font/poppins"
+                android:text="End Time:"
+                android:textColor="@color/darkGreen"
+                android:textColorHint="@color/darkGreen"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStartTime"
+                android:layout_width="104dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/rounded_textview"
+                android:ems="10"
+                android:inputType="time" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

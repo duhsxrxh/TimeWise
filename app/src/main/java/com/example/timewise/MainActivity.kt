@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity()
 
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
-                var sendIntent = Intent(this, HomeScreen :: class.java)
+                var sendIntent = Intent(this, SubtasksScreen :: class.java)
 
                 //takes users to the Home Screen
                 startActivity(sendIntent)
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity()
 
         binding.txtSignup.setOnClickListener()
         {
-            var sendIntent = Intent(this, SignUpScreen :: class.java)
+            var sendIntent = Intent(this, HomeScreen :: class.java)
 
             //takes users tot he SignUp Screen
             startActivity(sendIntent)
