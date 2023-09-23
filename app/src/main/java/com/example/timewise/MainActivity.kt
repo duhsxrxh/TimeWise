@@ -1,12 +1,10 @@
 package com.example.timewise
 
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.timewise.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()
@@ -16,7 +14,6 @@ class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
 
         //variables for the text fields
