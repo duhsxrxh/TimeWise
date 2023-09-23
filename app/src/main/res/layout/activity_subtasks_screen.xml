@@ -120,6 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:clickable="true"
+        app:backgroundTint="@color/darkGreen"
         app:layout_constraintBottom_toTopOf="@+id/navigationBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.921"
