@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
-import android.widget.RelativeLayout
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -16,13 +16,16 @@ import java.util.Locale
 class HomeScreen : AppCompatActivity()
 {
     //activity main XML components
-    var button : Button ?= null
-    var text : TextView ?= null
-
+    var homeButton : Button ?= null
+    var calendarButton : Button ?= null
+    var activityButton : Button ?= null
+    var profileButton : Button ?= null
+    var mainScreenText : TextView ?= null
 
     //Inflated view components
     var viewButton: Button?= null
     var inflatedtext: EditText?= null
+    var backImage: ImageView?= null
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -41,11 +44,15 @@ class HomeScreen : AppCompatActivity()
         dayTextView.text = currentDay
 
         //activity main XML components
-        text?.findViewById<TextView>(R.id.txtCategoryName)
+        mainScreenText?.findViewById<TextView>(R.id.txtCategoryName)
+        homeButton?.findViewById<Button>(R.id.btnHomeScreen)
+        calendarButton?.findViewById<Button>(R.id.btnCalenderScreen)
+        activityButton?.findViewById<Button>(R.id.btnActivityScreen)
+        profileButton?.findViewById<Button>(R.id.btnProfileScreen)
 
         binding.btnAddCategory.setOnClickListener()
         {
-            binding.btnAddCategory.isEnabled = false;
+            //binding.btnAddCategory.isEnabled = false;
 
             val inflater = LayoutInflater.from(applicationContext)
             val view = inflater.inflate(R.layout.show_pop_up, null)
@@ -53,30 +60,25 @@ class HomeScreen : AppCompatActivity()
             //container is where we are adding the view
             val container = findViewById<ConstraintLayout>(R.id.homeScreenLayout)
 
-            //create layout parameters for ventering the view
-            val layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
-            layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT)
-
-            //set layout params to the view
-            view.layoutParams = layoutParams
-
             //display the inflated view
             container.addView(view)
 
             //inflated layout components
             viewButton = findViewById(R.id.btnCreateNewCategory)
             inflatedtext = findViewById(R.id.txtCreateNewCategory)
+            backImage = findViewById(R.id.imageView3)
 
             viewButton?.setOnClickListener()
             {
-                //get the text from the inflated editText and set it to the main text view
-                val t = inflatedtext?.text
-                text?.setText(t)
+                //Get the text from the inflated EditText
+                val newText = inflatedtext?.text.toString()
 
-                button?.isEnabled = true
+                //Set the text of the main TextView to the new text
+                mainScreenText?.text = newText
 
-                //remove the inflated view
+                //Remove the inflated view
                 container.removeView(view)
+
             }
 
 
