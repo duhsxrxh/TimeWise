@@ -9,6 +9,7 @@ import com.example.timewise.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()
 {
+    //test for git
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
