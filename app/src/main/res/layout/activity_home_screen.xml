@@ -115,7 +115,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAddSubCategory"
+        android:id="@+id/btnAddCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -127,6 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/headerBackground"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_menu_add" />
+
     <TextView
         android:id="@+id/txtCategoryAndSubtasksHeading"
         android:layout_width="wrap_content"
