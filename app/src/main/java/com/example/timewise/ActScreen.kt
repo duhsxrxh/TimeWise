@@ -1,10 +1,17 @@
 package com.example.timewise
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.example.timewise.databinding.ActivityActScreenBinding
+import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.utils.ColorTemplate
 
 class ActScreen : AppCompatActivity()
 {
@@ -14,12 +21,15 @@ class ActScreen : AppCompatActivity()
     var activityButton : Button?= null
     var profileButton : Button?= null
 
+    lateinit var barChart: BarChart
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         val binding = ActivityActScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(R.layout.activity_act_screen)
+        setContentView(R.layout.activity_act_screen)
 
         //activity main XML components
         homeButton?.findViewById<Button>(R.id.btnHomeScreen)
@@ -47,5 +57,30 @@ class ActScreen : AppCompatActivity()
             val overviewIntent = Intent(this, Overview::class.java)
             startActivity(overviewIntent)
         }
+
+        barChart = findViewById(R.id.bar_chart)
+
+        val list: ArrayList<BarEntry> = ArrayList()
+
+        list.add(BarEntry(100f, 100f))
+        list.add(BarEntry(101f, 200f))
+        list.add(BarEntry(102f, 300f))
+        list.add(BarEntry(103f, 400f))
+        list.add(BarEntry(104f, 500f))
+
+        val barDataSet = BarDataSet(list, "list")
+
+        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+        barDataSet.valueTextColor = Color.BLACK
+
+        val barData = BarData(barDataSet)
+
+        barChart.setFitBars(true)
+
+        barChart.data = barData
+
+        barChart.description.text = "Bar Chart"
+
+        barChart.animateY(2000)
     }
 }

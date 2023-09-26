@@ -2,8 +2,6 @@ package com.example.timewise
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,11 +21,6 @@ class MainActivity : AppCompatActivity()
         val username = findViewById<EditText>(R.id.editTextTextUsername)
         val password = findViewById<EditText>(R.id.editTextTextPassword)
 
-
-
-        //trying to change button color
-        //signIn.setBackgroundColor(ContextCompat.getColor(this, R.color.buttongreen))
-
         //onclick listener for the sign in button
         binding.btnSignIn.setOnClickListener()
         {//doesn't let users log in without filling in the required fields
@@ -42,7 +35,7 @@ class MainActivity : AppCompatActivity()
 
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
-                var sendIntent = Intent(this, SubtasksScreen :: class.java)
+                var sendIntent = Intent(this, HomeScreen :: class.java)
 
                 //takes users to the Home Screen
                 startActivity(sendIntent)
