@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.RecyclerView
 import com.example.timewise.databinding.ActivityHomeScreenBinding
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -24,15 +25,17 @@ class HomeScreen : AppCompatActivity()
     var mainScreenText : TextView ?= null
 
     //Inflated view components
-    var viewButton: Button?= null
-    var inflatedtext: EditText?= null
+    var btnCreatecategory: Button?= null
+    var inflatedTextCategoryName: EditText?= null
     var backImage: ImageView?= null
 
+    @Override
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         val binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var recycelerViewCategories = findViewById<RecyclerView>(R.id.recycleViewCategories);
 
         //setting the date
         val dateTextView = findViewById<TextView>(R.id.dateTextView)
@@ -53,6 +56,7 @@ class HomeScreen : AppCompatActivity()
 
         binding.btnAddCategory.setOnClickListener()
         {
+
             //binding.btnAddCategory.isEnabled = false;
 
             val inflater = LayoutInflater.from(applicationContext)
@@ -61,18 +65,26 @@ class HomeScreen : AppCompatActivity()
             //container is where we are adding the view
             val container = findViewById<ConstraintLayout>(R.id.homeScreenLayout)
 
+            //create layout parameters for ventering the view
+            val layoutParams = ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
+
+
+            //set layout params to the view
+            view.layoutParams = layoutParams
+
             //display the inflated view
             container.addView(view)
 
+            @Override
             //inflated layout components
-            viewButton = findViewById(R.id.btnCreateNewCategory)
-            inflatedtext = findViewById(R.id.txtCreateNewCategory)
+            btnCreatecategory = findViewById(R.id.btnCreateNewCategory)
+            inflatedTextCategoryName = findViewById(R.id.txtCreateNewCategory)
             backImage = findViewById(R.id.imageView3)
 
-            viewButton?.setOnClickListener()
+            btnCreatecategory?.setOnClickListener()
             {
                 //Get the text from the inflated EditText
-                val newText = inflatedtext?.text.toString()
+                val newText = inflatedTextCategoryName?.text.toString()
 
                 //Set the text of the main TextView to the new text
                 mainScreenText?.text = newText

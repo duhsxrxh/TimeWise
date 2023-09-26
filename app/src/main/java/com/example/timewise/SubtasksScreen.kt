@@ -16,12 +16,10 @@ class SubtasksScreen : AppCompatActivity()
         binding.btnAddSubTask.setOnClickListener()
         {
 
-
             var sendIntent = Intent(this, CreateSubtasksScreen :: class.java)
 
             //takes users tot he SignUp Screen
             startActivity(sendIntent)
-
 
         }
 
