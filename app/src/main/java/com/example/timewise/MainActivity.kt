@@ -2,6 +2,8 @@ package com.example.timewise
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity()
         //variables for the text fields
         val username = findViewById<EditText>(R.id.editTextTextUsername)
         val password = findViewById<EditText>(R.id.editTextTextPassword)
+
+
 
         //trying to change button color
         //signIn.setBackgroundColor(ContextCompat.getColor(this, R.color.buttongreen))
@@ -54,6 +58,12 @@ class MainActivity : AppCompatActivity()
 
         }
 
+        /*val profileButton = findViewById<Button>(R.id.btnProfileScreen)
+        profileButton.setOnClickListener(View.OnClickListener
+        {
+            val profileIntent = Intent(this, ProfileScreen::class.java)
+            startActivity(profileIntent)
+        })*/
 
 
     }
