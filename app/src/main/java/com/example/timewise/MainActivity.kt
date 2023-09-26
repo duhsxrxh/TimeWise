@@ -58,12 +58,7 @@ class MainActivity : AppCompatActivity()
 
         }
 
-        /*val profileButton = findViewById<Button>(R.id.btnProfileScreen)
-        profileButton.setOnClickListener(View.OnClickListener
-        {
-            val profileIntent = Intent(this, ProfileScreen::class.java)
-            startActivity(profileIntent)
-        })*/
+
 
 
     }

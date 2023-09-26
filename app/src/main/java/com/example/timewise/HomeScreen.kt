@@ -1,5 +1,6 @@
 package com.example.timewise
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
@@ -83,6 +84,15 @@ class HomeScreen : AppCompatActivity()
 
 
         }
+
+        //profile screen button
+        binding.btnProfileScreen.setOnClickListener()
+        {
+            val profileIntent = Intent(this, CreateSubtasksScreen::class.java)
+            startActivity(profileIntent)
+        }
+
+
     }
 
     private fun getCurrentDate(): String
