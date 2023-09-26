@@ -18,7 +18,7 @@ class HomeScreen : AppCompatActivity()
 {
     //activity main XML components
     var homeButton : Button ?= null
-    var calendarButton : Button ?= null
+    var overviewButton : Button ?= null
     var activityButton : Button ?= null
     var profileButton : Button ?= null
     var mainScreenText : TextView ?= null
@@ -47,7 +47,7 @@ class HomeScreen : AppCompatActivity()
         //activity main XML components
         mainScreenText?.findViewById<TextView>(R.id.txtCategoryName)
         homeButton?.findViewById<Button>(R.id.btnHomeScreen)
-        calendarButton?.findViewById<Button>(R.id.btnCalenderScreen)
+        overviewButton?.findViewById<Button>(R.id.btnCalenderScreen)
         activityButton?.findViewById<Button>(R.id.btnActivityScreen)
         profileButton?.findViewById<Button>(R.id.btnProfileScreen)
 
@@ -85,11 +85,25 @@ class HomeScreen : AppCompatActivity()
 
         }
 
-        //profile screen button
+        //opening profile screen button
         binding.btnProfileScreen.setOnClickListener()
         {
-            val profileIntent = Intent(this, CreateSubtasksScreen::class.java)
+            val profileIntent = Intent(this, ProfileScreen::class.java)
             startActivity(profileIntent)
+        }
+
+        //opening overview screen button
+        binding.btnOverviewScreen.setOnClickListener()
+        {
+            val overviewIntent = Intent(this, Overview::class.java)
+            startActivity(overviewIntent)
+        }
+
+        //opening activity screen button
+        binding.btnActivityScreen.setOnClickListener()
+        {
+            val activityIntent = Intent(this, ActScreen::class.java)
+            startActivity(activityIntent)
         }
 
 

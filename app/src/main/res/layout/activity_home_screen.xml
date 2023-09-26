@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.542" />
 
     <Button
-        android:id="@+id/btnCalenderScreen"
+        android:id="@+id/btnOverviewScreen"
         android:layout_width="53dp"
         android:layout_height="54dp"
         android:layout_marginEnd="128dp"
@@ -97,7 +97,7 @@
         android:layout_marginStart="52dp"
         android:background="@drawable/activity_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnCalenderScreen"
+        app:layout_constraintStart_toEndOf="@+id/btnOverviewScreen"
         app:layout_constraintTop_toTopOf="@+id/navigationBackground"
         app:layout_constraintVertical_bias="0.542" />
 

@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/actProfile"
+    android:id="@+id/actOverview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:scrollbarThumbHorizontal="@color/darkGreen"
     android:scrollbarThumbVertical="@color/darkGreen"
-    tools:context=".ProfileScreen">
+    tools:context=".Overview">
 
     <ImageView
         android:id="@+id/headerBackground"
@@ -35,7 +35,7 @@
         android:id="@+id/tvProfile"
         style="@style/Headings"
         android:layout_height="45dp"
-        android:text="PROFILE"
+        android:text="OVERVIEW"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/headerBackground"
         app:layout_constraintEnd_toEndOf="parent"
