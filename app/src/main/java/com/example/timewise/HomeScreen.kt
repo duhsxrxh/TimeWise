@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.recyclerview.widget.RecyclerView
 import com.example.timewise.databinding.ActivityHomeScreenBinding
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -35,7 +34,6 @@ class HomeScreen : AppCompatActivity()
         super.onCreate(savedInstanceState)
         val binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var recycelerViewCategories = findViewById<RecyclerView>(R.id.recycleViewCategories);
 
         //setting the date
         val dateTextView = findViewById<TextView>(R.id.dateTextView)
@@ -56,9 +54,6 @@ class HomeScreen : AppCompatActivity()
 
         binding.btnAddCategory.setOnClickListener()
         {
-
-            //binding.btnAddCategory.isEnabled = false;
-
             val inflater = LayoutInflater.from(applicationContext)
             val view = inflater.inflate(R.layout.show_pop_up, null)
 
@@ -67,7 +62,6 @@ class HomeScreen : AppCompatActivity()
 
             //create layout parameters for centering the view
             val layoutParams = ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
-
 
             //set layout params to the view
             view.layoutParams = layoutParams
@@ -79,7 +73,7 @@ class HomeScreen : AppCompatActivity()
             //inflated layout components
             btnCreatecategory = findViewById(R.id.btnCreateNewCategory)
             inflatedTextCategoryName = findViewById(R.id.txtCreateNewCategory)
-            backImage = findViewById(R.id.imageView3)
+            backImage = findViewById(R.id.createACategoryBackground)
 
             btnCreatecategory?.setOnClickListener()
             {

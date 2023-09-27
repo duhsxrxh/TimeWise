@@ -92,13 +92,12 @@
         app:layout_constraintVertical_bias="0.542" />
 
 
-
     <TextView
         android:id="@+id/tvStartDateHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
-        android:text="Start Time:"
+        android:text="Start Date:"
         android:textColor="@color/darkGreen"
         android:textColorHint="@color/darkGreen"
         android:textStyle="bold"
@@ -107,16 +106,16 @@
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174"
+        app:layout_constraintVertical_bias="0.18"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/etStartTime"
+        android:id="@+id/etStartDate"
         android:layout_width="184dp"
         android:layout_height="42dp"
         android:background="@drawable/rounded_textview"
         android:ems="10"
-        android:inputType="time"
+        android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.145"
@@ -126,12 +125,12 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/etEndTime"
+        android:id="@+id/etEndDate"
         android:layout_width="184dp"
         android:layout_height="42dp"
         android:background="@drawable/rounded_textview"
         android:ems="10"
-        android:inputType="time"
+        android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.145"
@@ -145,7 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
-        android:text="End Time:"
+        android:text="End Date:"
         android:textColor="@color/darkGreen"
         android:textColorHint="@color/darkGreen"
         android:textStyle="bold"
@@ -154,7 +153,7 @@
         app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304"
+        app:layout_constraintVertical_bias="0.32"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -175,7 +174,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnTakePicture"
+        android:id="@+id/btnSearch"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_btn_view"
@@ -191,6 +190,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.36"
         tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="353dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,10 +32,12 @@ class ActScreen : AppCompatActivity()
         setContentView(R.layout.activity_act_screen)
 
         //activity main XML components
-        homeButton?.findViewById<Button>(R.id.btnHomeScreen)
-        overviewButton?.findViewById<Button>(R.id.btnCalenderScreen)
-        activityButton?.findViewById<Button>(R.id.btnActivityScreen)
-        profileButton?.findViewById<Button>(R.id.btnProfileScreen)
+        homeButton = findViewById(R.id.btnHomeScreen)
+        overviewButton = findViewById(R.id.btnCalenderScreen)
+        activityButton = findViewById(R.id.btnActivityScreen)
+        profileButton = findViewById(R.id.btnProfileScreen)
+
+        bargraph()
 
         //opening home screen button
         binding.btnHomeScreen.setOnClickListener()
@@ -58,6 +60,10 @@ class ActScreen : AppCompatActivity()
             startActivity(overviewIntent)
         }
 
+    }
+
+    private fun bargraph()
+    {
         barChart = findViewById(R.id.bar_chart)
 
         val list: ArrayList<BarEntry> = ArrayList()
@@ -75,12 +81,15 @@ class ActScreen : AppCompatActivity()
 
         val barData = BarData(barDataSet)
 
-        barChart.setFitBars(true)
+        barChart.setFitBars(false)
 
         barChart.data = barData
 
-        barChart.description.text = "Bar Chart"
+        barChart.description.text = "Categories"
 
         barChart.animateY(2000)
+
+
+
     }
 }
