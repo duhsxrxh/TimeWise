@@ -91,4 +91,106 @@
         app:layout_constraintTop_toTopOf="@+id/navigationBackground"
         app:layout_constraintVertical_bias="0.542" />
 
+
+
+    <TextView
+        android:id="@+id/tvStartDateHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Start Time:"
+        android:textColor="@color/darkGreen"
+        android:textColorHint="@color/darkGreen"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.174"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etStartTime"
+        android:layout_width="184dp"
+        android:layout_height="42dp"
+        android:background="@drawable/rounded_textview"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etEndTime"
+        android:layout_width="184dp"
+        android:layout_height="42dp"
+        android:background="@drawable/rounded_textview"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.366"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvEndDateHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="End Time:"
+        android:textColor="@color/darkGreen"
+        android:textColorHint="@color/darkGreen"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Description:"
+        android:textColor="@color/darkGreen"
+        android:textColorHint="@color/darkGreen"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.459"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnTakePicture"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_btn_view"
+        android:text="Search"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36"
+        tools:ignore="MissingConstraints" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
