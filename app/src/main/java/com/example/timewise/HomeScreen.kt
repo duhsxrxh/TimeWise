@@ -65,7 +65,7 @@ class HomeScreen : AppCompatActivity()
             //container is where we are adding the view
             val container = findViewById<ConstraintLayout>(R.id.homeScreenLayout)
 
-            //create layout parameters for ventering the view
+            //create layout parameters for centering the view
             val layoutParams = ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
 
 
