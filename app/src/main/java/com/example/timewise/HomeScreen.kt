@@ -48,11 +48,11 @@ class HomeScreen : AppCompatActivity()
         dayTextView.text = currentDay
 
         //activity main XML components
-        mainScreenText?.findViewById<TextView>(R.id.txtCategoryName)
-        homeButton?.findViewById<Button>(R.id.btnHomeScreen)
-        overviewButton?.findViewById<Button>(R.id.btnCalenderScreen)
-        activityButton?.findViewById<Button>(R.id.btnActivityScreen)
-        profileButton?.findViewById<Button>(R.id.btnProfileScreen)
+        mainScreenText = findViewById<TextView>(R.id.txtCategoryName)
+        homeButton = findViewById<Button>(R.id.btnHomeScreen)
+        overviewButton = findViewById<Button>(R.id.btnCalenderScreen)
+        activityButton = findViewById<Button>(R.id.btnActivityScreen)
+        profileButton = findViewById<Button>(R.id.btnProfileScreen)
 
         binding.btnAddCategory.setOnClickListener()
         {
