@@ -16,6 +16,12 @@ import java.util.Locale
 
 class HomeScreen : AppCompatActivity()
 {
+
+    //String []data = {"Hello"};
+
+    val counter = 0;
+
+
     //activity main XML components
     var homeButton : Button ?= null
     var overviewButton : Button ?= null
@@ -28,12 +34,30 @@ class HomeScreen : AppCompatActivity()
     var inflatedTextCategoryName: EditText?= null
     var backImage: ImageView?= null
 
+
+
     @Override
     override fun onCreate(savedInstanceState: Bundle?)
     {
+
         super.onCreate(savedInstanceState)
         val binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //List<String>() items = new LinkedList<>();
+        //items.add("Code It");
+
+        //RecyclerView recyclerView = findViewById(R.id.recyclerViewCategories);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //DemoAdapter adapter = new DemoAdapter(items);
+        //recyclerView.setAdapter(adapter);
+
+        /*findViewById(R.id.add).setOnClickListener(view ->
+        {
+            items.add(data[counter%3]);
+            counter++;
+            adapter.notifyItemInserted(items.size()-1);
+        });*/
 
         //setting the date
         val dateTextView = findViewById<TextView>(R.id.dateTextView)
