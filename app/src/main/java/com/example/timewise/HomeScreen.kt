@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.timewise.databinding.ActivityHomeScreenBinding
 import java.text.SimpleDateFormat
@@ -33,6 +34,7 @@ class HomeScreen : AppCompatActivity() {
     private var btnCreateNewCategory: Button? = null
     private var inflatedTextCategoryName: EditText? = null
     private var backImage: ImageView? = null
+    private lateinit var cardView:CardView
     private  lateinit var userList : ArrayList<String>
     private lateinit var userAdapter: UserAdapter
 
@@ -63,6 +65,7 @@ class HomeScreen : AppCompatActivity() {
         btnCreateNewCategory = findViewById(R.id.btnCreateNewCategory)
 
         binding.btnAddCategory.setOnClickListener {
+
             val inflater = LayoutInflater.from(applicationContext)
             val view = inflater.inflate(R.layout.show_pop_up, null)
             // Container is where we are adding the view
@@ -83,14 +86,19 @@ class HomeScreen : AppCompatActivity() {
             // Inflated layout components
             btnCreateNewCategory = view.findViewById(R.id.btnCreateNewCategory)
 
+
             //Inflated view
             btnCreateNewCategory?.setOnClickListener {
 
                 Log.d(TAG, "create button clicked")
-                inflatedTextCategoryName = view.findViewById<EditText>(R.id.txtCreateNewCategory)
+                inflatedTextCategoryName = view.findViewById(R.id.txtCreateNewCategory)
+                cardView = view.findViewById(R.id.cards)
 
                 val items = ArrayList<String>()
+                val cards = ArrayList<CardView>()
+
                 items.add(inflatedTextCategoryName?.text.toString())
+                cards.add(cardView)
                 container.removeView(view)
             }
         }
