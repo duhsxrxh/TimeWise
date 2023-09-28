@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/home_screen_background_blur"
     android:orientation="vertical"
     android:scrollbarThumbHorizontal="@color/darkGreen"
     android:scrollbarThumbVertical="@color/darkGreen"
