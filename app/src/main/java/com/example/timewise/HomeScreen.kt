@@ -3,7 +3,6 @@ package com.example.timewise
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -41,21 +40,7 @@ class HomeScreen : AppCompatActivity() {
         val binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val items = LinkedList<String>()  // Use LinkedList to store items
 
-        items.add("Code It")
-
-        // Assuming you have already initialized 'items' and 'counter'
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCategories)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = DemoAdapter(items)
-        recyclerView.adapter = adapter
-
-        findViewById<View>(R.id.btnAddCategory).setOnClickListener { view ->
-            items.add(data[counter % 3])
-            counter++
-            adapter.notifyItemInserted(items.size - 1)
-        }
 
         // Setting the date
         val dateTextView = findViewById<TextView>(R.id.dateTextView)
@@ -68,7 +53,7 @@ class HomeScreen : AppCompatActivity() {
         dayTextView.text = currentDay
 
         // Activity main XML components
-        mainScreenText = findViewById(R.id.categoryCardName)
+        mainScreenText = findViewById(R.id.txtCategoryName)
         homeButton = findViewById(R.id.btnHomeScreen)
         overviewButton = findViewById(R.id.btnCalenderScreen)
         activityButton = findViewById(R.id.btnActivityScreen)
@@ -81,14 +66,7 @@ class HomeScreen : AppCompatActivity() {
             // Container is where we are adding the view
             val container = findViewById<ConstraintLayout>(R.id.homeScreenLayout)
 
-           /* // Create layout parameters for centering the view
-            val layoutParams = ConstraintLayout.LayoutParams(
-                //ConstraintLayout.LayoutParams.WRAP_CONTENT,
-                //ConstraintLayout.LayoutParams.WRAP_CONTENT
-            )*/
 
-            // Set layout params to the view
-            //view.layoutParams = layoutParams
 
             // Display the inflated view
             container.addView(view)
@@ -98,12 +76,27 @@ class HomeScreen : AppCompatActivity() {
             inflatedTextCategoryName = view.findViewById(R.id.txtCreateNewCategory)
             backImage = view.findViewById(R.id.createACategoryBackground)
 
+                //Inflated view
             btnCreatecategory?.setOnClickListener {
                 // Get the text from the inflated EditText
                 val newText = inflatedTextCategoryName?.text.toString()
 
                 // Set the text of the main TextView to the new text
                 mainScreenText?.text = newText
+
+                val items = LinkedList<String>()  // Use LinkedList to store items
+                items.add(newText)
+
+                // Assuming you have already initialized 'items' and 'counter'
+                val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCategories)
+                recyclerView.layoutManager = LinearLayoutManager(this)
+                val adapter = DemoAdapter(items)
+                recyclerView.adapter = adapter
+
+                counter++
+                adapter.notifyItemInserted(items.size - 1)
+
+
 
                 // Remove the inflated view
                 container.removeView(view)
@@ -126,6 +119,7 @@ class HomeScreen : AppCompatActivity() {
         binding.btnActivityScreen.setOnClickListener {
             val activityIntent = Intent(this, ActScreen::class.java)
             startActivity(activityIntent)
+            //finish()
         }
     }
 
