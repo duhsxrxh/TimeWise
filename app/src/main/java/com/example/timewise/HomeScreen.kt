@@ -31,7 +31,8 @@ class HomeScreen : AppCompatActivity()
     private var activityButton: Button? = null
     private var profileButton: Button? = null
     private var mainScreenText: TextView? = null
-    private var createSubtask:Button?=null
+    private var setGoals:Button?=null
+    private var enterGoals:Button?=null
 
     // Inflated view components
     private var btnCreateNewCategory: Button? = null
@@ -41,6 +42,12 @@ class HomeScreen : AppCompatActivity()
     private  lateinit var userList : ArrayList<String>
     private lateinit var userAdapter: UserAdapter
     private var txtCreateNewCategory: EditText?= null
+
+    //daily goals inflated view
+    var createDailyGoals: Button ?= null
+
+    //timesheet
+    var createTimeSheetEntry:Button?=null
 
     var TAG = "myAct"
 
@@ -70,7 +77,52 @@ class HomeScreen : AppCompatActivity()
         activityButton = findViewById(R.id.btnActivityScreen)
         profileButton = findViewById(R.id.btnProfileScreen)
         btnCreateNewCategory = findViewById(R.id.btnCreateNewCategory)
-        createSubtask = findViewById(R.id.btnCreateSubtask)
+
+        //set goals
+        setGoals = findViewById(R.id.btnSetGoals)
+
+        //time sheet
+        createTimeSheetEntry = findViewById(R.id.btnCreateTimeSheetEntry)
+
+        binding.btnCreateTimeSheetEntry.setOnClickListener()
+        {
+            val profileIntent = Intent(this, SubtasksScreen::class.java)
+            startActivity(profileIntent)
+        }
+
+
+        binding.btnSetGoals.setOnClickListener()
+        {
+            val newInflater = LayoutInflater.from(applicationContext)
+            val setGoalsView = newInflater.inflate(R.layout.setgoals, null)
+
+            //container is where we are adding the view
+            val container = findViewById<ConstraintLayout>(R.id.homeScreenLayout)
+
+            val layoutParams = ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
+
+
+            setGoalsView.layoutParams = layoutParams
+
+            //display the inflated view
+            container.addView(setGoalsView)
+
+            //inflated layout components
+            enterGoals = findViewById(R.id.btnEnterDailyGoals)
+
+            enterGoals?.setOnClickListener()
+            {
+                /*//get the text from the inflated editText and set it to the main text view
+                val t = inflatedtext?.text
+                text?.setText(t)
+
+                button?.isEnabled = true*/
+
+                //remove the inflated view
+                container.removeView(setGoalsView)
+            }
+
+        }
 
         binding.btnAddCategory.setOnClickListener {
 

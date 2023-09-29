@@ -49,7 +49,7 @@
                 android:ems="10"
                 android:fontFamily="@font/poppins"
                 android:hint="Enter Hours and Minutes"
-                android:inputType="textEmailAddress"
+                android:inputType="time"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/black" />
@@ -78,7 +78,7 @@
                 android:ems="10"
                 android:fontFamily="@font/poppins"
                 android:hint="Enter Hours and Minutes"
-                android:inputType="textEmailAddress"
+                android:inputType="time"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/black" />
@@ -88,7 +88,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/btnCreateNewCategory"
+                    android:id="@+id/btnEnterDailyGoals"
                     android:layout_width="277dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
