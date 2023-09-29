@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.timewise.databinding.ActivityCreateSubtasksScreenBinding
 
 @Suppress("DEPRECATION")
 class CreateSubtasksScreen : AppCompatActivity()
@@ -30,7 +31,8 @@ class CreateSubtasksScreen : AppCompatActivity()
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        var binding = ActivityCreateSubtasksScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         btnCamera = findViewById(R.id.btnTakePicture)
         ivImage = findViewById(R.id.imageViewSubTasks)
