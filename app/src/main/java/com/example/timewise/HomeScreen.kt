@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.timewise.databinding.ActivityHomeScreenBinding
+import com.example.timewise.view.UserAdapter
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -121,6 +122,9 @@ class HomeScreen : AppCompatActivity() {
             startActivity(activityIntent)
             //finish()
         }
+
+
+
     }
 
     private fun getCurrentDate(): String {

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:layout_marginTop="150dp"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    android:layout_marginBottom="400dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pop_up_background"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Set a minimum goal"
+            android:textAlignment="center"
+            android:textColor="@color/darkGreen"
+            android:fontFamily="@font/poppins"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:translationY="3dp"/>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtMinHoursMinutes"
+                android:layout_width="279dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/rounded_textview"
+                android:breakStrategy="simple"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Enter Hours and Minutes"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Set a maximum goal"
+                android:textAlignment="center"
+                android:textColor="@color/darkGreen"
+                android:fontFamily="@font/poppins"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:translationY="3dp"/>
+
+            <EditText
+                android:id="@+id/txtMaxHoursMinutes"
+                android:layout_width="279dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/rounded_textview"
+                android:breakStrategy="simple"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Enter Hours and Minutes"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/black" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnCreateNewCategory"
+                    android:layout_width="277dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/rounded_btn_view"
+                    android:fontFamily="@font/poppins"
+                    android:text="Enter"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
