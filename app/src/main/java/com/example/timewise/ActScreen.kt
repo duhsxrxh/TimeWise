@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.timewise.databinding.ActivityActScreenBinding
@@ -22,8 +21,6 @@ class ActScreen : AppCompatActivity()
     var activityButton : Button?= null
     var profileButton : Button?= null
 
-    var TAG = "myAct"
-
     lateinit var barChart: BarChart
 
     @SuppressLint("MissingInflatedId")
@@ -32,23 +29,21 @@ class ActScreen : AppCompatActivity()
         super.onCreate(savedInstanceState)
         val binding = ActivityActScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(R.layout.activity_act_screen)
+        setContentView(R.layout.activity_act_screen)
 
         //activity main XML components
         homeButton = findViewById(R.id.btnHomeScreen)
-        Log.d(TAG, "onCreate: homebutton")
         overviewButton = findViewById(R.id.btnCalenderScreen)
         activityButton = findViewById(R.id.btnActivityScreen)
         profileButton = findViewById(R.id.btnProfileScreen)
 
-        //bargraph()
+        bargraph()
 
         //opening home screen button
         binding.btnHomeScreen.setOnClickListener()
         {
             val homeIntent = Intent(this, HomeScreen::class.java)
             startActivity(homeIntent)
-            Log.d(TAG, "in homebutton: ")
         }
 
         //opening profile screen button
