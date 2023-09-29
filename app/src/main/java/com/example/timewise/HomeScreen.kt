@@ -3,7 +3,6 @@ package com.example.timewise
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -14,16 +13,18 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.timewise.databinding.ActivityHomeScreenBinding
 import com.example.timewise.view.UserAdapter
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.LinkedList
 import java.util.Locale
 
-class HomeScreen : AppCompatActivity() {
+class HomeScreen : AppCompatActivity()
+{
 
-
-    var count = 0;
 
     // Activity main XML components
     private var homeButton: Button? = null
@@ -39,6 +40,7 @@ class HomeScreen : AppCompatActivity() {
     private lateinit var cardView:CardView
     private  lateinit var userList : ArrayList<String>
     private lateinit var userAdapter: UserAdapter
+    private var txtCreateNewCategory: EditText?= null
 
     var TAG = "myAct"
 
@@ -49,25 +51,14 @@ class HomeScreen : AppCompatActivity() {
         val binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-<<<<<<< HEAD
-=======
+
         val items = LinkedList<String>()  // Use LinkedList to store items
+        var count = 0;
 
-        items.add("Code It")
 
-        // Assuming you have already initialized 'items' and 'counter'
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCategories)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = DemoAdapter(items)
-        recyclerView.adapter = adapter
 
-        findViewById<View>(R.id.btnAddCategory).setOnClickListener { view ->
-            items.add(data[counter % 3])
-            counter++
-            adapter.notifyItemInserted(items.size - 1)
-        }
 
->>>>>>> parent of bb50ab0 (push)
+
         // Setting the date
         val dateTextView = findViewById<TextView>(R.id.dateTextView)
         val currentDate = getCurrentDate()
@@ -79,10 +70,9 @@ class HomeScreen : AppCompatActivity() {
         dayTextView.text = currentDay
 
         // Activity main XML components
-<<<<<<< HEAD
-=======
+
         mainScreenText = findViewById(R.id.categoryCardName)
->>>>>>> parent of bb50ab0 (push)
+
         homeButton = findViewById(R.id.btnHomeScreen)
         overviewButton = findViewById(R.id.btnCalenderScreen)
         activityButton = findViewById(R.id.btnActivityScreen)
@@ -96,7 +86,7 @@ class HomeScreen : AppCompatActivity() {
             // Container is where we are adding the view
             val container = findViewById<ConstraintLayout>(R.id.homeScreenLayout)
 
-<<<<<<< HEAD
+
             val layoutParams = RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
@@ -105,53 +95,42 @@ class HomeScreen : AppCompatActivity() {
             layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT)
 
             view.layoutParams = layoutParams
-=======
-           /* // Create layout parameters for centering the view
-            val layoutParams = ConstraintLayout.LayoutParams(
-                //ConstraintLayout.LayoutParams.WRAP_CONTENT,
-                //ConstraintLayout.LayoutParams.WRAP_CONTENT
-            )*/
-
-            // Set layout params to the view
-            //view.layoutParams = layoutParams
->>>>>>> parent of bb50ab0 (push)
 
             // Display the inflated view
             container.addView(view)
 
             // Inflated layout components
-<<<<<<< HEAD
             btnCreateNewCategory = view.findViewById(R.id.btnCreateNewCategory)
+            inflatedTextCategoryName = view.findViewById(R.id.txtCreateNewCategory)
+            // Assuming you have already initialized 'items' and 'counter'
+            val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCategories)
 
+            val items = ArrayList<String>()
 
             //Inflated view
             btnCreateNewCategory?.setOnClickListener {
 
-                Log.d(TAG, "create button clicked")
-                inflatedTextCategoryName = view.findViewById(R.id.txtCreateNewCategory)
-                cardView = view.findViewById(R.id.cards)
-
-                val items = ArrayList<String>()
-                val cards = ArrayList<CardView>()
 
                 items.add(inflatedTextCategoryName?.text.toString())
-                cards.add(cardView)
-=======
-            btnCreatecategory = view.findViewById(R.id.btnCreateNewCategory)
-            inflatedTextCategoryName = view.findViewById(R.id.txtCreateNewCategory)
-            backImage = view.findViewById(R.id.createACategoryBackground)
 
-            btnCreatecategory?.setOnClickListener {
+                recyclerView.layoutManager = LinearLayoutManager(this)
+                val adapter = com.example.timewise.DemoAdapter(items)
+                recyclerView.adapter = adapter
+
+                findViewById<View>(R.id.btnAddCategory).setOnClickListener { view ->
+                    items.add(txtCreateNewCategory?.text.toString())
+                    count++
+                    adapter.notifyItemInserted(items.size - 1)
+                }
+
                 // Get the text from the inflated EditText
                 val newText = inflatedTextCategoryName?.text.toString()
 
-                // Set the text of the main TextView to the new text
-                mainScreenText?.text = newText
-
                 // Remove the inflated view
->>>>>>> parent of bb50ab0 (push)
                 container.removeView(view)
             }
+
+
         }
 
         // Opening profile screen button

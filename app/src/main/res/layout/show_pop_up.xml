@@ -76,9 +76,9 @@
 
             </RelativeLayout>
 
-<<<<<<< HEAD
+
         </LinearLayout>
-=======
+
     <ImageView
         android:id="@+id/createACategoryBackground"
         android:layout_width="320dp"
@@ -107,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="@+id/createACategoryBackground"
         app:layout_constraintStart_toStartOf="@+id/createACategoryBackground"
         app:layout_constraintTop_toTopOf="@+id/createACategoryBackground" />
->>>>>>> parent of bb50ab0 (push)
+
 
     </LinearLayout>
 
