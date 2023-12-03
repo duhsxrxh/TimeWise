@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "76339734346",
+    "project_id": "timewise-dc620",
+    "storage_bucket": "timewise-dc620.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76339734346:android:7bc14261314c2be79603b3",
+        "android_client_info": {
+          "package_name": "com.example.timewise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBznwuM2lrLpPIoYjg1lUkarnt0vIuqavk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
