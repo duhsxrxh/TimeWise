@@ -84,7 +84,7 @@ class SignUpScreen : AppCompatActivity()
             firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(){
              if(it.isSuccessful)
              {
-                 var sendIntent = Intent(this, HomeScreen :: class.java)
+                 var sendIntent = Intent(this, MainActivity :: class.java)
 
                  //takes users tot he SignUp Screen
                  startActivity(sendIntent)

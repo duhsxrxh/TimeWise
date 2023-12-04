@@ -1,10 +1,9 @@
 package com.example.timewise
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.timewise.databinding.ActivityProfileScreenBinding
 
 class ProfileScreen : AppCompatActivity()
@@ -15,7 +14,7 @@ class ProfileScreen : AppCompatActivity()
     var overviewButton : Button?= null
     var activityButton : Button?= null
     var profileButton : Button?= null
-
+    var darkModeButton : Button?= null
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -23,13 +22,19 @@ class ProfileScreen : AppCompatActivity()
         val binding = ActivityProfileScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //setContentView(R.layout.activity_profile_screen)
-
         //activity main XML components
         homeButton?.findViewById<Button>(R.id.btnHomeScreen)
         overviewButton?.findViewById<Button>(R.id.btnCalenderScreen)
         activityButton?.findViewById<Button>(R.id.btnActivityScreen)
         profileButton?.findViewById<Button>(R.id.btnProfileScreen)
+        darkModeButton?.findViewById<Button>(R.id.btnMode)
+
+        //dark mode button
+        binding.btnMode.setOnClickListener()
+        {
+            val overviewIntent = Intent(this, ProfileScreenDarkMode::class.java)
+            startActivity(overviewIntent)
+        }
 
 
         //opening overview screen button

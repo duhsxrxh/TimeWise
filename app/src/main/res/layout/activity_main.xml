@@ -19,7 +19,7 @@
         android:breakStrategy="simple"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="@string/username"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textAllCaps="false"
