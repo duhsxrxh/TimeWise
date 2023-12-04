@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.timewise"
-    compileSdk = 33
+    compileSdk = 34
 
 
     viewBinding.enable = true
@@ -57,3 +57,4 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
+
