@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.timewise.databinding.ActivitySignUpScreenBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class SignUpScreen : AppCompatActivity()
@@ -19,6 +20,8 @@ class SignUpScreen : AppCompatActivity()
     var btnSignUp : Button ?= null
 
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var FirebaseFirestore: FirebaseFirestore
+
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
