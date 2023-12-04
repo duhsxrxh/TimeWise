@@ -4,39 +4,29 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.timewise.databinding.ActivityProfileScreenDarkModeBinding
+import com.example.timewise.databinding.ActivityOverviewDarkModeBinding
 
-class ProfileScreenDarkMode : AppCompatActivity()
+class OverviewDarkMode : AppCompatActivity()
 {
+
+    //activity main XML components
     var homeButton : Button?= null
     var overviewButton : Button?= null
     var activityButton : Button?= null
-    var darkModeButton : Button?= null
+    var profileButton : Button?= null
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
-
         super.onCreate(savedInstanceState)
-        val binding = ActivityProfileScreenDarkModeBinding.inflate(layoutInflater)
+        val binding = ActivityOverviewDarkModeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //setContentView(R.layout.activity_overview)
 
+        //activity main XML components
         homeButton?.findViewById<Button>(R.id.btnHomeScreen)
         overviewButton?.findViewById<Button>(R.id.btnCalenderScreen)
         activityButton?.findViewById<Button>(R.id.btnActivityScreen)
-        darkModeButton?.findViewById<Button>(R.id.btnMode)
-
-        //dark mode button
-        binding.btnMode.setOnClickListener()
-        {
-            val overviewIntent = Intent(this, ProfileScreen::class.java)
-            startActivity(overviewIntent)
-        }
-
-        //opening overview screen button
-        binding.btnOverviewScreen.setOnClickListener()
-        {
-            val overviewIntent = Intent(this, OverviewDarkMode::class.java)
-            startActivity(overviewIntent)
-        }
+        profileButton?.findViewById<Button>(R.id.btnProfileScreen)
 
         //opening activity screen button
         binding.btnActivityScreen.setOnClickListener()
@@ -51,6 +41,14 @@ class ProfileScreenDarkMode : AppCompatActivity()
             val homeIntent = Intent(this, HomeScreenDarkMode::class.java)
             startActivity(homeIntent)
         }
+
+        //opening profile screen button
+        binding.btnProfileScreen.setOnClickListener()
+        {
+            val profileIntent = Intent(this, ProfileScreenDarkMode::class.java)
+            startActivity(profileIntent)
+        }
+
 
     }
 }
