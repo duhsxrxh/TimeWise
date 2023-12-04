@@ -29,7 +29,7 @@ class ActScreen : AppCompatActivity()
         super.onCreate(savedInstanceState)
         val binding = ActivityActScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setContentView(R.layout.activity_act_screen)
+
 
         //activity main XML components
         homeButton = findViewById(R.id.btnHomeScreen)

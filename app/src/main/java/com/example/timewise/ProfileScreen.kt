@@ -2,12 +2,24 @@ package com.example.timewise
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.timewise.databinding.ActivityProfileScreenBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+
 
 class ProfileScreen : AppCompatActivity()
 {
+    val database = Firebase.database
+    //val timewiseRef = database.getReference("User Details")
 
     //activity main XML components
     var homeButton : Button?= null
@@ -15,12 +27,16 @@ class ProfileScreen : AppCompatActivity()
     var activityButton : Button?= null
     var profileButton : Button?= null
     var darkModeButton : Button?= null
+    //val emailTextView = findViewById<TextView>(R.id.tvEmail)
+    //val usernameTextView = findViewById<TextView>(R.id.tvName)
+
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         val binding = ActivityProfileScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         //activity main XML components
         homeButton?.findViewById<Button>(R.id.btnHomeScreen)
@@ -57,5 +73,7 @@ class ProfileScreen : AppCompatActivity()
             val homeIntent = Intent(this, HomeScreen::class.java)
             startActivity(homeIntent)
         }
+
+
     }
 }
